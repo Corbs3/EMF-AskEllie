@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ask Ellie: custom terms</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header class="o-top">
+      <div class="o-ellie" id="o-ellie"></div>
+      <div>
+        <h1>Your custom terms</h1>
+        <p class="lead">Teach Ellie new words, like your team's project names. They sync to your Chrome profile and show under <b>Custom</b>.</p>
+      </div>
+    </header>
+
+    <form class="card" id="form" novalidate>
+      <h2 id="form-title">Add a term</h2>
+      <label>Term <span class="req">required</span>
+        <input id="f-phrase" maxlength="80" autocomplete="off" placeholder="circular design challenge">
+      </label>
+      <p class="err" id="e-phrase" role="alert"></p>
+
+      <label>What it means
+        <textarea id="f-def" maxlength="300" rows="2" placeholder="Shown when you tap the term in the panel"></textarea>
+      </label>
+
+      <label>Other spellings
+        <input id="f-aliases" maxlength="200" autocomplete="off" placeholder="CDC, circular-design challenge">
+        <small>Separate with commas. Plurals and hyphen or space versions are found automatically.</small>
+      </label>
+
+      <fieldset>
+        <legend>Which wing?</legend>
+        <div class="wing-pick">
+          <label class="wp bio"><input type="radio" name="wing" value="bio"> Biological</label>
+          <label class="wp tech"><input type="radio" name="wing" value="tech"> Technical</label>
+          <label class="wp both"><input type="radio" name="wing" value="both" checked> Both</label>
+        </div>
+      </fieldset>
+
+      <label class="check"><input type="checkbox" id="f-cs"> Match exact capitals <small>(good for acronyms like CDC)</small></label>
+
+      <div class="actions">
+        <button class="btn-main" type="submit" id="save-btn">Add term</button>
+        <button class="btn-ghost" type="button" id="cancel-btn" hidden>Cancel</button>
+      </div>
+    </form>
+
+    <section>
+      <h2 class="list-h">Saved terms <span id="count"></span></h2>
+      <ul class="list" id="list"></ul>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

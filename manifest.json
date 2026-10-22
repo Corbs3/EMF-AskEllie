@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Ask Ellie",
+  "version": "1.3.0",
+  "description": "Ask Ellie the butterfly! Scan any page for circular economy terms and look up what they mean.",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "sidePanel", "storage", "contextMenus"],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "action": {
+    "default_title": "Ask Ellie",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}
